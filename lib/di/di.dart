@@ -5,6 +5,7 @@ import 'package:voucher_hub/network/di/di.dart';
 import 'package:voucher_hub/product/di/di.dart';
 import 'package:voucher_hub/secure_storage/di.dart';
 import 'package:voucher_hub/user/di/di.dart';
+import 'package:voucher_hub/voucher/di/di.dart';
 
 void configureDI(GetIt di) {
   configureSecureStorageDI(di);
@@ -13,4 +14,5 @@ void configureDI(GetIt di) {
   configureUserDI(di);
   configureAuthDI(di);
   configureProductDI(di);
+  configureVoucherDI(di);
 }
