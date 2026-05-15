@@ -66,6 +66,8 @@ class CartScreen extends StatelessWidget {
     Cart cart, {
     required bool isUpdating,
   }) {
+    CartBloc bloc = context.read();
+
     return Column(
       spacing: 16,
       children: [
@@ -76,7 +78,6 @@ class CartScreen extends StatelessWidget {
             separatorBuilder: (context, index) => const SizedBox(height: 16),
             itemCount: cart.items.length,
             itemBuilder: (context, index) {
-              CartBloc bloc = context.read();
               final item = cart.items[index];
 
               return CartItemBox(
