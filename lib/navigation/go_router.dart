@@ -1,9 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:voucher_hub/auth/domain/repository/auth_repository.dart';
+import 'package:voucher_hub/auth/ui/login/login_bloc.dart';
+import 'package:voucher_hub/auth/ui/login/login_screen.dart';
 import 'package:voucher_hub/navigation/route_paths.dart';
 
 GoRouter? _router;
@@ -61,6 +64,13 @@ GoRouter _createGoRouterInternal(GetIt di) {
             body: Center(child: CircularProgressIndicator()),
           );
         },
+      ),
+      GoRoute(
+        path: RoutePaths.login,
+        builder: (context, state) => BlocProvider(
+          create: (context) => di<LoginBloc>(),
+          child: const LoginScreen(),
+        ),
       ),
     ],
   );

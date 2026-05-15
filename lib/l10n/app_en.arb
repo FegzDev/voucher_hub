@@ -1,3 +1,11 @@
 {
-  "appName": "Voucher Hub"
+  "appName": "Voucher Hub",
+  "login": "Login",
+  "loginMessage": "Welcome back, we've missed you!",
+  "email": "Email",
+  "blankEmail": "Email is blank",
+  "password": "Password",
+  "blankPassword": "Password is blank",
+  "dismiss": "Dismiss",
+  "continueText": "Continue"
 }

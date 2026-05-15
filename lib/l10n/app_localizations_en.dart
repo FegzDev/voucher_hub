@@ -10,4 +10,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appName => 'Voucher Hub';
+
+  @override
+  String get login => 'Login';
+
+  @override
+  String get loginMessage => 'Welcome back, we\'ve missed you!';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get blankEmail => 'Email is blank';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get blankPassword => 'Password is blank';
+
+  @override
+  String get dismiss => 'Dismiss';
+
+  @override
+  String get continueText => 'Continue';
 }

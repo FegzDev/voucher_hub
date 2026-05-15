@@ -99,6 +99,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Voucher Hub'**
   String get appName;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
+
+  /// No description provided for @loginMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back, we\'ve missed you!'**
+  String get loginMessage;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @blankEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email is blank'**
+  String get blankEmail;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @blankPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is blank'**
+  String get blankPassword;
+
+  /// No description provided for @dismiss.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismiss'**
+  String get dismiss;
+
+  /// No description provided for @continueText.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueText;
 }
 
 class _AppLocalizationsDelegate
