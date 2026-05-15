@@ -34,4 +34,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get continueText => 'Continue';
+
+  @override
+  String hiTemplate(Object name) {
+    return 'Hi, $name';
+  }
+
+  @override
+  String get cart => 'Cart';
+
+  @override
+  String get vouchers => 'Vouchers';
+
+  @override
+  String get profile => 'Profile';
 }

@@ -147,6 +147,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Continue'**
   String get continueText;
+
+  /// No description provided for @hiTemplate.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi, {name}'**
+  String hiTemplate(Object name);
+
+  /// No description provided for @cart.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart'**
+  String get cart;
+
+  /// No description provided for @vouchers.
+  ///
+  /// In en, this message translates to:
+  /// **'Vouchers'**
+  String get vouchers;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
 }
 
 class _AppLocalizationsDelegate

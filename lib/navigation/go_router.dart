@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:voucher_hub/auth/domain/repository/auth_repository.dart';
 import 'package:voucher_hub/auth/ui/login/login_bloc.dart';
 import 'package:voucher_hub/auth/ui/login/login_screen.dart';
+import 'package:voucher_hub/home/home_screen.dart';
 import 'package:voucher_hub/navigation/route_paths.dart';
 
 GoRouter? _router;
@@ -71,6 +72,10 @@ GoRouter _createGoRouterInternal(GetIt di) {
           create: (context) => di<LoginBloc>(),
           child: const LoginScreen(),
         ),
+      ),
+      GoRoute(
+        path: RoutePaths.home,
+        builder: (context, state) => const HomeScreen(),
       ),
     ],
   );

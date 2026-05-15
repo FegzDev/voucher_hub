@@ -7,5 +7,9 @@
   "password": "Password",
   "blankPassword": "Password is blank",
   "dismiss": "Dismiss",
-  "continueText": "Continue"
+  "continueText": "Continue",
+  "hiTemplate": "Hi, {name}",
+  "cart": "Cart",
+  "vouchers": "Vouchers",
+  "profile": "Profile"
 }
