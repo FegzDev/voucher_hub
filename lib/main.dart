@@ -18,22 +18,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      onGenerateTitle: (context) => context.localizations.appName,
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.greenAccent)),
-      routerConfig: createGoRouter(GetIt.instance),
-      builder: (context, child) {
-        return MultiBlocProvider(
-          providers: [
-            BlocProvider<AuthBloc>(create: (_) => GetIt.instance()),
-            BlocProvider<UserBloc>(create: (_) => GetIt.instance()),
-          ],
-          child: Scaffold(body: child ?? const Center()),
-        );
-      },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthBloc>(create: (_) => GetIt.instance()),
+        BlocProvider<UserBloc>(create: (_) => GetIt.instance()),
+      ],
+      child: MaterialApp.router(
+        onGenerateTitle: (context) => context.localizations.appName,
+        debugShowCheckedModeBanner: false,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.greenAccent)),
+        routerConfig: createGoRouter(GetIt.instance),
+      ),
     );
   }
 }
