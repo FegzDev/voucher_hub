@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:voucher_hub/l10n/extension.dart';
 import 'package:voucher_hub/navigation/route_paths.dart';
+import 'package:voucher_hub/product/ui/catalogue/product_catalogue_screen.dart';
 import 'package:voucher_hub/user/ui/bloc/user_bloc.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(context),
-      body: const Placeholder(),
+      body: const ProductCatalogueScreen(),
     );
   }
 

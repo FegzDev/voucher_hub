@@ -57,4 +57,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get logout => 'Logout';
+
+  @override
+  String get products => 'Products';
+
+  @override
+  String productImageLabelTemplate(Object product) {
+    return '$product Image';
+  }
+
+  @override
+  String get noProducts => 'No Products';
 }

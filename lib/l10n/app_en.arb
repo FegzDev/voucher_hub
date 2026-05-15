@@ -14,5 +14,8 @@
   "profile": "Profile",
   "firstName": "First Name",
   "lastName": "Last Name",
-  "logout": "Logout"
+  "logout": "Logout",
+  "products": "Products",
+  "productImageLabelTemplate": "{product} Image",
+  "noProducts": "No Products"
 }

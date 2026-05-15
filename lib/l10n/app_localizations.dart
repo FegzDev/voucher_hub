@@ -189,6 +189,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Logout'**
   String get logout;
+
+  /// No description provided for @products.
+  ///
+  /// In en, this message translates to:
+  /// **'Products'**
+  String get products;
+
+  /// No description provided for @productImageLabelTemplate.
+  ///
+  /// In en, this message translates to:
+  /// **'{product} Image'**
+  String productImageLabelTemplate(Object product);
+
+  /// No description provided for @noProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'No Products'**
+  String get noProducts;
 }
 
 class _AppLocalizationsDelegate
