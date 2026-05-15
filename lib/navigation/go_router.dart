@@ -11,6 +11,8 @@ import 'package:voucher_hub/home/home_screen.dart';
 import 'package:voucher_hub/navigation/route_paths.dart';
 import 'package:voucher_hub/product/ui/catalogue/product_catalogue_bloc.dart';
 import 'package:voucher_hub/user/ui/profile/profile_screen.dart';
+import 'package:voucher_hub/voucher/ui/list/voucher_list_bloc.dart';
+import 'package:voucher_hub/voucher/ui/list/voucher_list_screen.dart';
 
 GoRouter? _router;
 
@@ -80,6 +82,13 @@ GoRouter _createGoRouterInternal(GetIt di) {
         builder: (context, state) => BlocProvider(
           create: (context) => di<ProductCatalogueBloc>(),
           child: const HomeScreen(),
+        ),
+      ),
+      GoRoute(
+        path: RoutePaths.voucherList,
+        builder: (context, state) => BlocProvider(
+          create: (context) => di<VoucherListBloc>(),
+          child: const VoucherListScreen(),
         ),
       ),
       GoRoute(

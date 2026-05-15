@@ -50,15 +50,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profile => 'Profile';
 
   @override
-  String get firstName => 'First Name';
-
-  @override
-  String get lastName => 'Last Name';
-
-  @override
-  String get logout => 'Logout';
-
-  @override
   String get products => 'Products';
 
   @override
@@ -68,4 +59,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noProducts => 'No Products';
+
+  @override
+  String get noVouchers => 'No Vouchers';
+
+  @override
+  String get firstName => 'First Name';
+
+  @override
+  String get lastName => 'Last Name';
+
+  @override
+  String get logout => 'Logout';
 }

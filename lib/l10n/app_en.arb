@@ -12,10 +12,11 @@
   "cart": "Cart",
   "vouchers": "Vouchers",
   "profile": "Profile",
-  "firstName": "First Name",
-  "lastName": "Last Name",
-  "logout": "Logout",
   "products": "Products",
   "productImageLabelTemplate": "{product} Image",
-  "noProducts": "No Products"
+  "noProducts": "No Products",
+  "noVouchers": "No Vouchers",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "logout": "Logout"
 }
