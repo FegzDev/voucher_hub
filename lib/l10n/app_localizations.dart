@@ -190,6 +190,42 @@ abstract class AppLocalizations {
   /// **'No Products'**
   String get noProducts;
 
+  /// No description provided for @product.
+  ///
+  /// In en, this message translates to:
+  /// **'Product'**
+  String get product;
+
+  /// No description provided for @redemptionDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Redemption Details'**
+  String get redemptionDetails;
+
+  /// No description provided for @amount.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount'**
+  String get amount;
+
+  /// No description provided for @quantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity'**
+  String get quantity;
+
+  /// No description provided for @addToCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add To Cart'**
+  String get addToCart;
+
+  /// No description provided for @addedToCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Added To Cart'**
+  String get addedToCart;
+
   /// No description provided for @noVouchers.
   ///
   /// In en, this message translates to:

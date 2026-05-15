@@ -7,9 +7,12 @@ import 'package:go_router/go_router.dart';
 import 'package:voucher_hub/auth/domain/repository/auth_repository.dart';
 import 'package:voucher_hub/auth/ui/login/login_bloc.dart';
 import 'package:voucher_hub/auth/ui/login/login_screen.dart';
+import 'package:voucher_hub/cart/ui/add_item/add_cart_item_bloc.dart';
 import 'package:voucher_hub/home/home_screen.dart';
 import 'package:voucher_hub/navigation/route_paths.dart';
 import 'package:voucher_hub/product/ui/catalogue/product_catalogue_bloc.dart';
+import 'package:voucher_hub/product/ui/details/product_details_bloc.dart';
+import 'package:voucher_hub/product/ui/details/product_details_screen.dart';
 import 'package:voucher_hub/user/ui/profile/profile_screen.dart';
 import 'package:voucher_hub/voucher/ui/details/voucher_details_bloc.dart';
 import 'package:voucher_hub/voucher/ui/details/voucher_details_screen.dart';
@@ -84,6 +87,18 @@ GoRouter _createGoRouterInternal(GetIt di) {
         builder: (context, state) => BlocProvider(
           create: (context) => di<ProductCatalogueBloc>(),
           child: const HomeScreen(),
+        ),
+      ),
+      GoRoute(
+        path: RoutePaths.productDetails,
+        builder: (context, state) => MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => di<ProductDetailsBloc>(param1: state.extra),
+            ),
+            BlocProvider(create: (context) => di<AddCartItemBloc>()),
+          ],
+          child: const ProductDetailsScreen(),
         ),
       ),
       GoRoute(

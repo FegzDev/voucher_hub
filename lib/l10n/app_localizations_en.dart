@@ -61,6 +61,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noProducts => 'No Products';
 
   @override
+  String get product => 'Product';
+
+  @override
+  String get redemptionDetails => 'Redemption Details';
+
+  @override
+  String get amount => 'Amount';
+
+  @override
+  String get quantity => 'Quantity';
+
+  @override
+  String get addToCart => 'Add To Cart';
+
+  @override
+  String get addedToCart => 'Added To Cart';
+
+  @override
   String get noVouchers => 'No Vouchers';
 
   @override

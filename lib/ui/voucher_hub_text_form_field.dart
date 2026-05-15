@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class VoucherHubTextFormField extends StatelessWidget {
   final TextEditingController controller;
   final bool obscureText;
   final String? hintText;
   final Widget? suffixIcon;
+  final TextInputType? keyboardType;
+  final List<TextInputFormatter>? inputFormatters;
   final BorderRadius? borderRadius;
   final FormFieldValidator<String>? validator;
 
@@ -14,6 +17,8 @@ class VoucherHubTextFormField extends StatelessWidget {
     this.obscureText = false,
     this.hintText,
     this.suffixIcon,
+    this.keyboardType,
+    this.inputFormatters,
     this.borderRadius,
     this.validator,
   });
@@ -23,6 +28,8 @@ class VoucherHubTextFormField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       obscureText: obscureText,
+      keyboardType: keyboardType,
+      inputFormatters: inputFormatters,
       decoration: InputDecoration(
         hintText: hintText,
         suffixIcon: suffixIcon,
