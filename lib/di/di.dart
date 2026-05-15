@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:voucher_hub/auth/di/di.dart';
+import 'package:voucher_hub/cart/di/di.dart';
 import 'package:voucher_hub/database/di.dart';
 import 'package:voucher_hub/network/di/di.dart';
 import 'package:voucher_hub/product/di/di.dart';
@@ -14,5 +15,6 @@ void configureDI(GetIt di) {
   configureUserDI(di);
   configureAuthDI(di);
   configureProductDI(di);
+  configureCartDI(di);
   configureVoucherDI(di);
 }
