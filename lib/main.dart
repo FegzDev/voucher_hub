@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:voucher_hub/auth/ui/bloc/auth_bloc.dart';
 import 'package:voucher_hub/di/di.dart';
 import 'package:voucher_hub/l10n/app_localizations.dart';
 import 'package:voucher_hub/l10n/extension.dart';
@@ -25,8 +26,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.greenAccent)),
       routerConfig: createGoRouter(GetIt.instance),
       builder: (context, child) {
-        return BlocProvider<UserBloc>(
-          create: (_) => GetIt.instance(),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider<AuthBloc>(create: (_) => GetIt.instance()),
+            BlocProvider<UserBloc>(create: (_) => GetIt.instance()),
+          ],
           child: Scaffold(body: child ?? const Center()),
         );
       },

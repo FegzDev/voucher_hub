@@ -5,6 +5,7 @@ import 'package:voucher_hub/auth/data/remote/data_source/data_source.dart';
 import 'package:voucher_hub/auth/data/remote/data_source/dio_data_source.dart';
 import 'package:voucher_hub/auth/data/repository/auth_repository_impl.dart';
 import 'package:voucher_hub/auth/domain/repository/auth_repository.dart';
+import 'package:voucher_hub/auth/ui/bloc/auth_bloc.dart';
 import 'package:voucher_hub/auth/ui/login/login_bloc.dart';
 
 void configureAuthDI(GetIt di) {
@@ -19,6 +20,9 @@ void configureAuthDI(GetIt di) {
         remoteDataSource: di(),
         userRepository: di(),
       ),
+    )
+    ..registerFactory(
+      () => AuthBloc(authRepository: di(), userRepository: di()),
     )
     ..registerFactory(() => LoginBloc(di()));
 }
