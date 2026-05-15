@@ -19,9 +19,7 @@ class MyApp extends StatelessWidget {
       onGenerateTitle: (context) => context.localizations.appName,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.greenAccent)),
       routerConfig: createGoRouter(GetIt.instance),
     );
   }
