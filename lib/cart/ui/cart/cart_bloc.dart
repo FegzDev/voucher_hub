@@ -16,6 +16,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   CartBloc(this._repository) : super(const CartState.initial()) {
     on<_GetCart>(_onGetCart);
     on<_RefreshCart>(_onRefreshCart);
+    on<_ClearCart>(_onClearCart);
     on<_UpdateItem>(_onUpdateItem);
     on<_RemoveItem>(_onRemoveItem);
   }
@@ -26,6 +27,10 @@ class CartBloc extends Bloc<CartEvent, CartState> {
 
   Future<void> _onRefreshCart(_RefreshCart _, Emitter<CartState> emit) async {
     await _getCart(emit);
+  }
+
+  Future<void> _onClearCart(_ClearCart _, Emitter<CartState> emit) async {
+    emit(const CartState.empty());
   }
 
   Future<void> _getCart(Emitter<CartState> emit) async {
