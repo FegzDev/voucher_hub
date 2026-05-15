@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:voucher_hub/cart/domain/model/cart.dart';
 import 'package:voucher_hub/cart/domain/repository/cart_repository.dart';
