@@ -11,5 +11,8 @@
   "hiTemplate": "Hi, {name}",
   "cart": "Cart",
   "vouchers": "Vouchers",
-  "profile": "Profile"
+  "profile": "Profile",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "logout": "Logout"
 }
