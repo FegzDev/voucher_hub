@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:voucher_hub/l10n/app_localizations.dart';
+import 'package:voucher_hub/l10n/extension.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      onGenerateTitle: (context) => context.localizations.appName,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(
         // This is the theme of your application.
         //
