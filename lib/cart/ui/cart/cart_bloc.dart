@@ -18,8 +18,6 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     on<_RefreshCart>(_onRefreshCart);
     on<_UpdateItem>(_onUpdateItem);
     on<_RemoveItem>(_onRemoveItem);
-
-    add(const CartEvent.getCart());
   }
 
   Future<void> _onGetCart(_GetCart _, Emitter<CartState> emit) async {

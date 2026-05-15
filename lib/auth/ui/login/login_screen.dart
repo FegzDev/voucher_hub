@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:voucher_hub/auth/ui/login/login_bloc.dart';
 import 'package:voucher_hub/auth/ui/widget/password_form_field.dart';
+import 'package:voucher_hub/cart/ui/cart/cart_bloc.dart';
 import 'package:voucher_hub/l10n/extension.dart';
 import 'package:voucher_hub/navigation/route_paths.dart';
 import 'package:voucher_hub/ui/button_progress_indicator.dart';
@@ -37,7 +38,11 @@ class _LoginScreenState extends State<LoginScreen> {
         listener: (context, state) {
           state.maybeWhen(
             loading: () => _hideScaffoldMessenger(context),
-            success: (_) => context.go(RoutePaths.home),
+            success: (_) {
+              CartBloc bloc = context.read();
+              bloc.add(const CartEvent.getCart());
+              context.go(RoutePaths.home);
+            },
             failure: (data) {
               ScaffoldMessenger.of(
                 context,

@@ -85,6 +85,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get checkout => 'Checkout';
 
   @override
+  String get subtotal => 'Subtotal';
+
+  @override
+  String get fees => 'Fees';
+
+  @override
+  String get total => 'Total';
+
+  @override
+  String get confirm => 'Confirm';
+
+  @override
+  String get reference => 'Reference';
+
+  @override
+  String get done => 'Done';
+
+  @override
   String get noVouchers => 'No Vouchers';
 
   @override

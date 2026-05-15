@@ -10,6 +10,9 @@ import 'package:voucher_hub/auth/ui/login/login_screen.dart';
 import 'package:voucher_hub/cart/ui/add_item/add_cart_item_bloc.dart';
 import 'package:voucher_hub/cart/ui/cart/cart_bloc.dart';
 import 'package:voucher_hub/cart/ui/cart/cart_screen.dart';
+import 'package:voucher_hub/cart/ui/checkout/checkout_bloc.dart';
+import 'package:voucher_hub/cart/ui/checkout/checkout_screen.dart';
+import 'package:voucher_hub/cart/ui/total/cart_total_bloc.dart';
 import 'package:voucher_hub/home/home_screen.dart';
 import 'package:voucher_hub/navigation/route_paths.dart';
 import 'package:voucher_hub/product/ui/catalogue/product_catalogue_bloc.dart';
@@ -59,10 +62,20 @@ GoRouter _createGoRouterInternal(GetIt di) {
       final isOnInitialScreen = state.matchedLocation == RoutePaths.initial;
 
       if (isLoggedIn && isOnInitialScreen) {
+        if (context.mounted) {
+          CartBloc bloc = context.read();
+          bloc.add(const CartEvent.getCart());
+        }
+
         return RoutePaths.home;
       }
 
       if (!isLoggedIn && !isOnLoginScreen) {
+        if (context.mounted) {
+          CartBloc bloc = context.read();
+          bloc.add(const CartEvent.clearCart());
+        }
+
         return RoutePaths.login;
       }
 
@@ -105,9 +118,16 @@ GoRouter _createGoRouterInternal(GetIt di) {
       ),
       GoRoute(
         path: RoutePaths.cart,
-        builder: (context, state) => BlocProvider(
-          create: (context) => di<CartBloc>(),
-          child: const CartScreen(),
+        builder: (context, state) => const CartScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.checkout,
+        builder: (context, state) => MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => di<CartTotalBloc>()),
+            BlocProvider(create: (context) => di<CheckoutBloc>()),
+          ],
+          child: const CheckoutScreen(),
         ),
       ),
       GoRoute(

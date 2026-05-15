@@ -6,6 +6,8 @@ class CartEvent with _$CartEvent {
 
   const factory CartEvent.refreshCart() = _RefreshCart;
 
+  const factory CartEvent.clearCart() = _ClearCart;
+
   const factory CartEvent.updateItem({
     required int id,
     required double amount,

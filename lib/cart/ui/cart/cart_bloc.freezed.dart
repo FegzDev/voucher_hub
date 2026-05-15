@@ -55,12 +55,13 @@ extension CartEventPatterns on CartEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _GetCart value)?  getCart,TResult Function( _RefreshCart value)?  refreshCart,TResult Function( _UpdateItem value)?  updateItem,TResult Function( _RemoveItem value)?  removeItem,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _GetCart value)?  getCart,TResult Function( _RefreshCart value)?  refreshCart,TResult Function( _ClearCart value)?  clearCart,TResult Function( _UpdateItem value)?  updateItem,TResult Function( _RemoveItem value)?  removeItem,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _GetCart() when getCart != null:
 return getCart(_that);case _RefreshCart() when refreshCart != null:
-return refreshCart(_that);case _UpdateItem() when updateItem != null:
+return refreshCart(_that);case _ClearCart() when clearCart != null:
+return clearCart(_that);case _UpdateItem() when updateItem != null:
 return updateItem(_that);case _RemoveItem() when removeItem != null:
 return removeItem(_that);case _:
   return orElse();
@@ -80,12 +81,13 @@ return removeItem(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _GetCart value)  getCart,required TResult Function( _RefreshCart value)  refreshCart,required TResult Function( _UpdateItem value)  updateItem,required TResult Function( _RemoveItem value)  removeItem,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _GetCart value)  getCart,required TResult Function( _RefreshCart value)  refreshCart,required TResult Function( _ClearCart value)  clearCart,required TResult Function( _UpdateItem value)  updateItem,required TResult Function( _RemoveItem value)  removeItem,}){
 final _that = this;
 switch (_that) {
 case _GetCart():
 return getCart(_that);case _RefreshCart():
-return refreshCart(_that);case _UpdateItem():
+return refreshCart(_that);case _ClearCart():
+return clearCart(_that);case _UpdateItem():
 return updateItem(_that);case _RemoveItem():
 return removeItem(_that);case _:
   throw StateError('Unexpected subclass');
@@ -104,12 +106,13 @@ return removeItem(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _GetCart value)?  getCart,TResult? Function( _RefreshCart value)?  refreshCart,TResult? Function( _UpdateItem value)?  updateItem,TResult? Function( _RemoveItem value)?  removeItem,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _GetCart value)?  getCart,TResult? Function( _RefreshCart value)?  refreshCart,TResult? Function( _ClearCart value)?  clearCart,TResult? Function( _UpdateItem value)?  updateItem,TResult? Function( _RemoveItem value)?  removeItem,}){
 final _that = this;
 switch (_that) {
 case _GetCart() when getCart != null:
 return getCart(_that);case _RefreshCart() when refreshCart != null:
-return refreshCart(_that);case _UpdateItem() when updateItem != null:
+return refreshCart(_that);case _ClearCart() when clearCart != null:
+return clearCart(_that);case _UpdateItem() when updateItem != null:
 return updateItem(_that);case _RemoveItem() when removeItem != null:
 return removeItem(_that);case _:
   return null;
@@ -128,11 +131,12 @@ return removeItem(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  getCart,TResult Function()?  refreshCart,TResult Function( int id,  double amount,  int quantity)?  updateItem,TResult Function( int id)?  removeItem,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  getCart,TResult Function()?  refreshCart,TResult Function()?  clearCart,TResult Function( int id,  double amount,  int quantity)?  updateItem,TResult Function( int id)?  removeItem,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetCart() when getCart != null:
 return getCart();case _RefreshCart() when refreshCart != null:
-return refreshCart();case _UpdateItem() when updateItem != null:
+return refreshCart();case _ClearCart() when clearCart != null:
+return clearCart();case _UpdateItem() when updateItem != null:
 return updateItem(_that.id,_that.amount,_that.quantity);case _RemoveItem() when removeItem != null:
 return removeItem(_that.id);case _:
   return orElse();
@@ -152,11 +156,12 @@ return removeItem(_that.id);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  getCart,required TResult Function()  refreshCart,required TResult Function( int id,  double amount,  int quantity)  updateItem,required TResult Function( int id)  removeItem,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  getCart,required TResult Function()  refreshCart,required TResult Function()  clearCart,required TResult Function( int id,  double amount,  int quantity)  updateItem,required TResult Function( int id)  removeItem,}) {final _that = this;
 switch (_that) {
 case _GetCart():
 return getCart();case _RefreshCart():
-return refreshCart();case _UpdateItem():
+return refreshCart();case _ClearCart():
+return clearCart();case _UpdateItem():
 return updateItem(_that.id,_that.amount,_that.quantity);case _RemoveItem():
 return removeItem(_that.id);case _:
   throw StateError('Unexpected subclass');
@@ -175,11 +180,12 @@ return removeItem(_that.id);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  getCart,TResult? Function()?  refreshCart,TResult? Function( int id,  double amount,  int quantity)?  updateItem,TResult? Function( int id)?  removeItem,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  getCart,TResult? Function()?  refreshCart,TResult? Function()?  clearCart,TResult? Function( int id,  double amount,  int quantity)?  updateItem,TResult? Function( int id)?  removeItem,}) {final _that = this;
 switch (_that) {
 case _GetCart() when getCart != null:
 return getCart();case _RefreshCart() when refreshCart != null:
-return refreshCart();case _UpdateItem() when updateItem != null:
+return refreshCart();case _ClearCart() when clearCart != null:
+return clearCart();case _UpdateItem() when updateItem != null:
 return updateItem(_that.id,_that.amount,_that.quantity);case _RemoveItem() when removeItem != null:
 return removeItem(_that.id);case _:
   return null;
@@ -245,6 +251,38 @@ int get hashCode => runtimeType.hashCode;
 @override
 String toString() {
   return 'CartEvent.refreshCart()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _ClearCart implements CartEvent {
+  const _ClearCart();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ClearCart);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'CartEvent.clearCart()';
 }
 
 

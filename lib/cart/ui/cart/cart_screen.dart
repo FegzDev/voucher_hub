@@ -123,15 +123,7 @@ class CartScreen extends StatelessWidget {
           child: _checkoutButton(
             onCheckout: isUpdating
                 ? null
-                : () async {
-                    final checkout = await context.push(RoutePaths.checkout);
-                    if (!context.mounted) return;
-
-                    if (checkout == true) {
-                      CartBloc bloc = context.read();
-                      bloc.add(const CartEvent.refreshCart());
-                    }
-                  },
+                : () => context.push(RoutePaths.checkout),
             text: context.localizations.checkout,
           ),
         ),
