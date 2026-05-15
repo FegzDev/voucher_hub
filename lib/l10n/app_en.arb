@@ -21,6 +21,8 @@
   "quantity": "Quantity",
   "addToCart": "Add To Cart",
   "addedToCart": "Added To Cart",
+  "noCartItems": "No Cart Items",
+  "checkout": "Checkout",
   "noVouchers": "No Vouchers",
   "voucher": "Voucher",
   "code": "Code",

@@ -8,6 +8,8 @@ import 'package:voucher_hub/auth/domain/repository/auth_repository.dart';
 import 'package:voucher_hub/auth/ui/login/login_bloc.dart';
 import 'package:voucher_hub/auth/ui/login/login_screen.dart';
 import 'package:voucher_hub/cart/ui/add_item/add_cart_item_bloc.dart';
+import 'package:voucher_hub/cart/ui/cart/cart_bloc.dart';
+import 'package:voucher_hub/cart/ui/cart/cart_screen.dart';
 import 'package:voucher_hub/home/home_screen.dart';
 import 'package:voucher_hub/navigation/route_paths.dart';
 import 'package:voucher_hub/product/ui/catalogue/product_catalogue_bloc.dart';
@@ -99,6 +101,13 @@ GoRouter _createGoRouterInternal(GetIt di) {
             BlocProvider(create: (context) => di<AddCartItemBloc>()),
           ],
           child: const ProductDetailsScreen(),
+        ),
+      ),
+      GoRoute(
+        path: RoutePaths.cart,
+        builder: (context, state) => BlocProvider(
+          create: (context) => di<CartBloc>(),
+          child: const CartScreen(),
         ),
       ),
       GoRoute(

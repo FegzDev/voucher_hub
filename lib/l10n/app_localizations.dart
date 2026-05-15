@@ -226,6 +226,18 @@ abstract class AppLocalizations {
   /// **'Added To Cart'**
   String get addedToCart;
 
+  /// No description provided for @noCartItems.
+  ///
+  /// In en, this message translates to:
+  /// **'No Cart Items'**
+  String get noCartItems;
+
+  /// No description provided for @checkout.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout'**
+  String get checkout;
+
   /// No description provided for @noVouchers.
   ///
   /// In en, this message translates to:
