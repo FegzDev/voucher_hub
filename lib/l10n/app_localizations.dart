@@ -196,6 +196,36 @@ abstract class AppLocalizations {
   /// **'No Vouchers'**
   String get noVouchers;
 
+  /// No description provided for @voucher.
+  ///
+  /// In en, this message translates to:
+  /// **'Voucher'**
+  String get voucher;
+
+  /// No description provided for @code.
+  ///
+  /// In en, this message translates to:
+  /// **'Code'**
+  String get code;
+
+  /// No description provided for @pin.
+  ///
+  /// In en, this message translates to:
+  /// **'Pin'**
+  String get pin;
+
+  /// No description provided for @serialNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Serial Number'**
+  String get serialNumber;
+
+  /// No description provided for @expiryDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiry Date'**
+  String get expiryDate;
+
   /// No description provided for @firstName.
   ///
   /// In en, this message translates to:

@@ -64,6 +64,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noVouchers => 'No Vouchers';
 
   @override
+  String get voucher => 'Voucher';
+
+  @override
+  String get code => 'Code';
+
+  @override
+  String get pin => 'Pin';
+
+  @override
+  String get serialNumber => 'Serial Number';
+
+  @override
+  String get expiryDate => 'Expiry Date';
+
+  @override
   String get firstName => 'First Name';
 
   @override

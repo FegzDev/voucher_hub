@@ -16,6 +16,11 @@
   "productImageLabelTemplate": "{product} Image",
   "noProducts": "No Products",
   "noVouchers": "No Vouchers",
+  "voucher": "Voucher",
+  "code": "Code",
+  "pin": "Pin",
+  "serialNumber": "Serial Number",
+  "expiryDate": "Expiry Date",
   "firstName": "First Name",
   "lastName": "Last Name",
   "logout": "Logout"
