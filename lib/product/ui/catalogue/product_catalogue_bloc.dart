@@ -16,26 +16,26 @@ class ProductCatalogueBloc
 
   ProductCatalogueBloc(this._repository)
     : super(const ProductCatalogueState.initial()) {
-    on<_GetProducts>(_getProducts);
-    on<_RefreshProducts>(_refreshProducts);
+    on<_GetProducts>(_onGetProducts);
+    on<_RefreshProducts>(_onRefreshProducts);
     add(const ProductCatalogueEvent.getProducts());
   }
 
-  Future<void> _getProducts(
+  Future<void> _onGetProducts(
     _GetProducts _,
     Emitter<ProductCatalogueState> emit,
   ) async {
-    await _getProductsInternal(emit);
+    await _getProducts(emit);
   }
 
-  Future<void> _refreshProducts(
+  Future<void> _onRefreshProducts(
       _RefreshProducts _,
       Emitter<ProductCatalogueState> emit,
       ) async {
-    await _getProductsInternal(emit);
+    await _getProducts(emit);
   }
 
-  Future<void> _getProductsInternal(Emitter<ProductCatalogueState> emit) async {
+  Future<void> _getProducts(Emitter<ProductCatalogueState> emit) async {
     if (state is _Loading) return;
 
     emit(const ProductCatalogueState.loading());
