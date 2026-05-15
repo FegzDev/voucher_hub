@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:voucher_hub/di/di.dart';
 import 'package:voucher_hub/l10n/app_localizations.dart';
 import 'package:voucher_hub/l10n/extension.dart';
 
 void main() {
+  configureDI(GetIt.instance);
   runApp(const MyApp());
 }
 
